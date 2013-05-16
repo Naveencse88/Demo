@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "captcha";
+$route['default_controller'] = "chat";
 $route['404_override'] = '';
 
 

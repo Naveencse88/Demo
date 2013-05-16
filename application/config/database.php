@@ -12,7 +12,7 @@
 | EXPLANATION OF VARIABLES
 | -------------------------------------------------------------------
 |
-|	['hostname'] The hostname of your database server.
+|  ['hostname'] The hostname of your database server.
 |	['username'] The username used to connect to the database
 |	['password'] The password used to connect to the database
 |	['database'] The name of the database you want to connect to
@@ -48,10 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
+$db['default']['username'] = $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'] ;
+$db['default']['password'] = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] ;
+$db['default']['database'] = $_ENV['OPENSHIFT_APP_NAME'];
+$db['default']['port'] = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
